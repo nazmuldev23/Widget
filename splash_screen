@@ -1,0 +1,56 @@
+import 'package:e_commerce0/app/app_colors.dart';
+import 'package:e_commerce0/app/extensions/localization_extension.dart';
+import 'package:e_commerce0/app/utils/app_version_service.dart';
+import 'package:e_commerce0/features/shared/presentation/screens/bottom_nav_holder_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../../../../app/asset_paths.dart';
+import '../widget/app_logo.dart';
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
+  static const String name = '/';
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+
+  @override
+  void initState() {
+    super.initState();
+    _moveToNextScreen();
+  }
+
+  Future<void> _moveToNextScreen() async{
+    await Future.delayed(Duration(seconds: 5));//Routing duration
+    Navigator.pushReplacementNamed(context, BottomNavHolderScreen.name);//SignInScreen or others Screen
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(50),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Spacer(),
+              AppLogo(),//Build in Widget or //SvgPicture.asset(AssetsPaths.logoSvg,width: 120,)
+              Spacer(),
+              CircularProgressIndicator(color: AppColors.themeColor,),//loading Icon
+              SizedBox(height: 8,),
+              Text('${context.localization.version} '
+                  '${AppVersionService.currentAppVersion}'),
+
+
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
