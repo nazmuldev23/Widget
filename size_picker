@@ -1,0 +1,42 @@
+import 'package:e_commerce0/app/app_colors.dart';
+import 'package:flutter/material.dart';
+class SizePicker extends StatefulWidget {
+  const SizePicker({super.key, required this.Size, required this.onSelected});
+
+  final List<String> Size;
+  final Function(String) onSelected;
+
+  @override
+  State<SizePicker> createState() => _SizePickerState();
+}
+
+class _SizePickerState extends State<SizePicker> {
+  String? _selectedSize;
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        spacing: 8,
+        children: widget.Size.map((Size) {
+          return GestureDetector(
+            onTap: (){
+              _selectedSize = Size;
+              widget.onSelected(Size);
+              setState(() {});
+            },
+            child: CircleAvatar(
+              backgroundColor: _selectedSize == Size ? Colors.brown : AppColors.themeColor,
+              child: FittedBox(
+                child: Text(Size,style: TextStyle(
+                  color: _selectedSize == Size ? Colors.white:Colors.white,
+                  fontSize: 18,
+                ),),
+              ),
+            ),
+          );
+        }).toList(),
+      ),
+    );
+  }
+}
