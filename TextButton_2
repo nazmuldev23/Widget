@@ -1,0 +1,12 @@
+TextButton(
+                    onPressed: () {},
+                    child: Text('Forgot Password?',
+                      style: TextStyle(
+                        color: Colors.redAccent,
+                        fontSize: 16,
+                        decoration: TextDecoration.underline,
+                        decorationColor: Colors.redAccent,
+                        decorationThickness: 2,
+                      ),
+                    ),
+                  ),
