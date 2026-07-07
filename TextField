@@ -1,0 +1,16 @@
+ TextField(
+              onSubmitted: (String? text){},
+              textInputAction: TextInputAction.search,
+              decoration: InputDecoration(
+                hintText: 'Enter your email',
+                hintStyle: TextStyle(color: Colors.grey),
+                fillColor: Colors.grey.shade200,
+                filled: true,
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                ),
+              ),
+            )
