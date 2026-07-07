@@ -1,0 +1,11 @@
+TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Create account',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.green,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
