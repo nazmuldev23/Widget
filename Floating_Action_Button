@@ -1,0 +1,77 @@
+floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                  backgroundColor: Colors.orange.shade100,
+                  title: Text("Add Contact"),
+                  content: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      TextField(decoration: InputDecoration(
+                        hintText: "Fast Name",
+                        hintStyle: TextStyle(color: Colors.grey),
+                        fillColor: Colors.grey.shade200,
+                        filled: true,
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide.none
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: const BorderSide(
+                              color: Colors.grey,
+                              width: 1.5,
+                            )
+                        ),
+                      )),
+                      SizedBox(height: 10,),
+                      TextField(decoration: InputDecoration(
+                        hintText: "Last Name",
+                        hintStyle: TextStyle(color: Colors.grey),
+                        fillColor: Colors.grey.shade200,
+                        filled: true,
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide.none
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: const BorderSide(
+                              color: Colors.grey,
+                              width: 1.5,
+                            )
+                        ),
+                      )),
+                      SizedBox(height: 10,),
+                      TextField(decoration: InputDecoration(
+                        hintText: "Mobile",
+                        hintStyle: TextStyle(color: Colors.grey),
+                        fillColor: Colors.grey.shade200,
+                        filled: true,
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide.none
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: const BorderSide(
+                              color: Colors.grey,
+                              width: 1.5,
+                            )
+                        ),
+                      )),
+                      SizedBox(height: 10,),
+                      ElevatedButton(onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.orangeAccent
+                          ),
+                          child: Text(
+                              "Add To Contact", style: TextStyle(color: Colors
+                              .black)))
+                    ],
+                  )
+              );
+            },
+          );
+        },
+        child: const Icon(Icons.shopping_cart),
+      ),
