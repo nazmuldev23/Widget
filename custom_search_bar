@@ -1,0 +1,62 @@
+
+import 'package:flutter/material.dart';
+
+class CustomSearchBar extends StatelessWidget {
+  final TextEditingController? controller;
+  final VoidCallback? onFilterTap;
+  final ValueChanged<String>? onChanged;
+
+  const CustomSearchBar({
+    super.key,
+    this.controller,
+    this.onFilterTap,
+    this.onChanged,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 55,
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      decoration: BoxDecoration(
+        color: Colors.grey.shade100,
+        borderRadius: BorderRadius.circular(15),
+        border: Border.all(
+          color: Colors.grey.shade200,
+        ),
+      ),
+      child: Row(
+        children: [
+          const Icon(
+            Icons.search,
+            color: Colors.grey,
+            size: 25,
+          ),
+
+          const SizedBox(width: 10),
+
+          Expanded(
+            child: TextField(
+              controller: controller,
+              onChanged: onChanged,
+              decoration: const InputDecoration(
+                hintText: 'Search services...',
+                border: InputBorder.none,
+                isDense: true,
+              ),
+            ),
+          ),
+
+          GestureDetector(
+            onTap: onFilterTap,
+            child: const Icon(
+              Icons.tune,
+              color: Colors.black,
+              size: 24,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
